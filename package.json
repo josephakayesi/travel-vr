@@ -1,10 +1,11 @@
 {
-  "name": "travelVR",
+  "name": "travel-vr",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-360/scripts/packager.js",
     "bundle": "node node_modules/react-360/scripts/bundle.js",
+    "build": "yarn bundle && cp -rf static_assets build",
     "open": "node -e \"require('xopen')('http://localhost:8081/index.html')\"",
     "devtools": "react-devtools",
     "test": "jest"
