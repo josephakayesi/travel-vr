@@ -6,19 +6,15 @@ import {
   View,
 } from 'react-360';
 
-export default class Hello360 extends React.Component {
-  render() {
-    return (
-      <View style={styles.panel}>
-        <View style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            Welcome to React 360
+export const Hello360 = () => (
+  <View style={styles.panel}>
+    <View style={styles.greetingBox}>
+      <Text style={styles.greeting}>
+        Welcome to React 360
           </Text>
-        </View>
-      </View>
-    );
-  }
-};
+    </View>
+  </View>
+);
 
 const styles = StyleSheet.create({
   panel: {
