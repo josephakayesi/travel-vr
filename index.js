@@ -37,38 +37,38 @@ const PLACES = [
     }
 ];
 
-export default class TravelVR extends React.Component {
-    state = {
-        activeFlag: ''
-    };
+const TravelVR = () => {
+    const [state, setState] = React.useState({ activeFlag: '' });
 
-    changeBackground(panorama, name) {
+    const changeBackground = (panorama, name) => {
         Environment.setBackgroundImage(asset(panorama));
         TitleChanger.changeTitle(name);
-    }
+    };
 
-    renderFlags() {
+    const renderFlags = () => {
         return PLACES.map(({ flag, panorama, name }) => {
             return (
                 <Fragment key={flag}>
                     <Prefetch source={asset(panorama)} />
                     <VrButton
-                        onEnter={() => this.setState({ activeFlag: flag })}
-                        onExit={() => this.setState({ activeFlag: '' })}
-                        onClick={() => this.changeBackground(panorama, name)}
+                        onEnter={() => setState({ activeFlag: flag })}
+                        onExit={() => setState({ activeFlag: '' })}
+                        onClick={() => changeBackground(panorama, name)}
                     >
-                        <Flag image={flag} activeFlag={this.state.activeFlag} />
+                        <Flag image={flag} activeFlag={state.activeFlag} />
                     </VrButton>
                 </Fragment>
             );
         });
     }
 
-    render() {
-        const { flagContainer } = styles;
+    const { flagContainer } = styles;
 
-        return <View style={flagContainer}>{this.renderFlags()}</View>;
-    }
+    return (
+        <View style={flagContainer}>
+            {renderFlags()}
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({

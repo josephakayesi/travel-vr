@@ -1,18 +1,16 @@
 import React from 'react';
 import { asset, StyleSheet, Image } from 'react-360';
 
-export default class Flag extends React.Component {
-    render() {
-        const { flag } = styles;
-        const { activeFlag, image } = this.props;
+const Flag = ({ activeFlag, image }) => {
 
-        return (
-            <Image
-                style={[flag, activeFlag === image && styles.activeFlag]}
-                source={asset(image)}
-            />
-        );
-    }
+    const { flag } = styles;
+
+    return (
+        <Image
+            style={[flag, activeFlag === image && styles.activeFlag]}
+            source={asset(image)}
+        />
+    );
 }
 
 const styles = StyleSheet.create({
@@ -26,3 +24,5 @@ const styles = StyleSheet.create({
         opacity: 1
     }
 });
+
+export default Flag;
