@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppRegistry, asset, StyleSheet, Image } from 'react-360';
+import { asset, StyleSheet, Image } from 'react-360';
 
 export default class Flag extends React.Component {
     render() {

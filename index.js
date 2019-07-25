@@ -6,7 +6,6 @@ import {
     Environment,
     Prefetch,
     View,
-    Image,
     NativeModules,
     VrButton
 } from 'react-360';
